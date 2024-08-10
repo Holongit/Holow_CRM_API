@@ -14,6 +14,7 @@ from storage.services import doc_close, doc_open
 
 
 class StorageDocViewSet(viewsets.ModelViewSet):
+
     queryset = StorageDoc.objects.all()
     serializer_class = StorageDocSerializer
 
@@ -44,8 +45,6 @@ class GoodsViewSet(viewsets.ModelViewSet):
 
 
 class CommonGoodsViewSet(viewsets.ModelViewSet):
-    doc_close(12)
-    # doc_open(11)
     queryset = CommonGoods.objects.all()
     serializer_class = CommonGoodsSerializer
 

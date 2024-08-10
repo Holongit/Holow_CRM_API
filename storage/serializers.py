@@ -5,6 +5,9 @@ from rest_framework import serializers
 # from rest_framework.response import Response
 
 from storage.models import *
+from storage.services import doc_open, doc_close
+
+
 # from .models import Item
 
 
@@ -63,6 +66,14 @@ class StorageDocSerializer(serializers.ModelSerializer):
     class Meta:
         model = StorageDoc
         fields = '__all__'
+
+    def update(self, instance, validated_data):
+        if validated_data['status'] == 'open':
+            doc_open(instance.id)
+        if validated_data['status'] == 'close':
+            doc_close(instance.id)
+        instance = super(StorageDocSerializer, self).update(instance, validated_data)
+        return instance
 
 
 class StorageDocTableGetSerializer(serializers.ModelSerializer):
