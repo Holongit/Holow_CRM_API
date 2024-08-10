@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from storage import urls
+from .yasg import urlpatterns as docurls
 
 
 urlpatterns = [
@@ -25,3 +26,5 @@ urlpatterns = [
     path('api/v1/storage/', include(urls)),
     path('api/v1/drf-auth/', include('rest_framework.urls')),
 ]
+
+urlpatterns += docurls

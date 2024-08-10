@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import Item, Category
-
-
-admin.site.register(Item)
-admin.site.register(Category)
+from .models import Storages
+#
+#
+admin.site.register(Storages)
+# admin.site.register(Category)

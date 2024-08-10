@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-tz)jp4=k0z-xdz0xgq=f8=*b8t8=@%zxjws8w^s^*yjyn$(3*^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:8000",
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Application definition
@@ -39,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storage.apps.StorageConfig',
     'rest_framework',
+    'corsheaders',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'Holow_CRM_API.urls'
