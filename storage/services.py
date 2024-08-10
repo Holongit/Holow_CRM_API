@@ -52,3 +52,4 @@ def doc_open(doc_id):
     except:
         return Response({'status': f'Incorrect data, doc_id: {doc_id}'}, status=400)
 
+
