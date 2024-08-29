@@ -4,8 +4,8 @@ from django.db import models
 
 class Storages(models.Model):
     name = models.CharField(max_length=128)
-    location = models.CharField(max_length=512)
-    description = models.TextField()
+    location = models.CharField(max_length=512, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
