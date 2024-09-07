@@ -27,7 +27,7 @@ class StorageDoc(models.Model):
     updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
     status = models.CharField(max_length=32, default='open')
     description = models.TextField(blank=True, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
     client = models.ForeignKey('StorageClients', on_delete=models.DO_NOTHING, null=True, blank=True)
     storage = models.ForeignKey('Storages', verbose_name='storage', on_delete=models.PROTECT)
 
