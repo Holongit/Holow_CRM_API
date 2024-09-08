@@ -21,6 +21,7 @@ class StorageClients(models.Model):
         return self.name
 
 
+
 class StorageDoc(models.Model):
     type = models.CharField(max_length=32)
     created_at = models.DateTimeField(auto_now_add=True)
