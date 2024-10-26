@@ -34,7 +34,6 @@ class CategoryGoodsViewSet(viewsets.ModelViewSet):
     serializer_class = CategoryGoodsSerializer
 
 
-
 class GoodsViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == 'list':
@@ -58,7 +57,6 @@ class StorageDocTableViewSet(viewsets.ModelViewSet):
 
     queryset = StorageDocTable.objects.all()
     serializer_class = StorageDocTableSerializer
-
 
 
 class RemainsVieSet(viewsets.ModelViewSet):
