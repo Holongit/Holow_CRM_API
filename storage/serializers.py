@@ -68,9 +68,9 @@ class StorageDocSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def update(self, instance, validated_data):
-        if validated_data['status'] == 'open':
+        if validated_data['api_control'] == 'open':
             doc_open(instance.id)
-        if validated_data['status'] == 'close':
+        if validated_data['api_control'] == 'close':
             doc_close(instance.id)
         instance = super(StorageDocSerializer, self).update(instance, validated_data)
         return instance
